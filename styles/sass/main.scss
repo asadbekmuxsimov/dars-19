@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/recoleta");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@import "variable";
+@import "mixins";
+@import "function";
+@import "loop";
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 130px;
+}
+
+.headertop {
+  background: $main-bg-color;
+  padding: 0 130px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 21px;
+
+    .phone {
+      display: none;
+    }
+
+    .leftactions {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+
+      .login {
+        @include button(transparent, #fff);
+        font-family: Noto Sans;
+      }
+
+      .start {
+        @include button();
+        padding: 15px 25px;
+        font-family: Noto Sans;
+        border-radius: 25px;
+      }
+
+      a {
+        color: #fff;
+        font-size: 14px;
+        font-family: Noto Sans;
+        margin-right: 20px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+
+    .maininfo {
+      h1 {
+        font-family: "Recoleta";
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 65.25px;
+        color: #fbfaf7;
+
+        text-align: left;
+      }
+
+      p {
+        font-family: "Noto Sans";
+        font-size: 18px;
+        color: #fbfaf7;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.maincard {
+  max-width: 1400px;
+  margin: 120px auto 0;
+  padding: 0 130px;
+  margin-bottom: 113px;
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+
+  .item {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .cardinfo {
+      padding-left: 30px;
+      max-width: 400px;
+
+      h2 {
+        font-family: Recoleta;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 54px;
+        text-align: left;
+        margin-bottom: 27px;
+      }
+
+      p {
+        font-family: Noto Sans;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 66px;
+  margin-bottom: 120px;
+
+  .partner_wrap {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.quality {
+  background-color: $main-bg-color;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 66px 130px 120px;
+
+  h2 {
+    font-family: "Recoleta";
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 54px;
+    color: #fbfaf7;
+    text-align: center;
+    margin-bottom: 73px;
+  }
+
+  .card_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .card {
+      width: 280px;
+      text-align: center;
+
+      p {
+        font-family: Noto Sans;
+        font-size: 18px;
+        color: #fbfaf7;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.employees {
+  background: #f2efe6;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 66px 130px 120px;
+  text-align: center;
+
+  h2 {
+    font-family: Recoleta;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 54px;
+    text-align: center;
+  }
+
+  p {
+    font-family: Noto Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+  }
+}
+
+.menu_navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 130px;
+  background-color: lighten($main-bg-color, 10%);
+  width: 100vw;
+  height: 100vh;
+  gap: 50px;
+  position: fixed;
+  transition: 1s;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+
+  button {
+    @include button();
+    padding: 10px 30px;
+    border-radius: 25px;
+  }
+
+  a {
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: right;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    i {
+      font-size: 49px;
+      color: #fff;
+    }
+  }
+}
+
+input {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .headertop {
+    nav {
+      .phone {
+        display: block;
+      }
+
+      .leftactions {
+        display: none;
+      }
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  #check:checked+.menu_navbar {
+    transform: translateX(0);
+    transition: 1s;
+  }
+
+  .employees {
+    img {
+      display: none;
+    }
+  }
+}
+
+.how {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  .how-text {
+    margin-top: 154px;
+
+    h2 {
+      width: 338px;
+      height: 108px;
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      width: 350px;
+      height: 81px;
+      font-size: 18px;
+    }
+  }
+}
+.consider{
+  text-align: center;
+  h2{
+    font-size: 48px;
+  }
+  p{
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+}
+.consider-asosiy{
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.consider-div {
+  -webkit-box-shadow: 1px 2px 17px -5px rgba(0, 0, 0, 0.74);
+  -moz-box-shadow: 1px 2px 17px -5px rgba(0, 0, 0, 0.74);
+  box-shadow: 1px 2px 17px -5px rgba(0, 0, 0, 0.74);
+
+  background-color: #FBFAF7;
+  margin-bottom: 50px;
+  border-radius: 6px;
+
+  width: 350px;
+  padding: 30px;
+  .hh1{
+    width: 160px;
+    height: 63px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .hh2{
+    width: 285px;
+    height: 63px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .hh3{
+    width: 301px;
+    height: 63px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  h4{
+    font-size: 28px;
+  }
+  ul li{
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+.consider-div:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}

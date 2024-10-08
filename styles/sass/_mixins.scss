@@ -1,0 +1,14 @@
+@mixin button($bg-color: #198c36, $color: #fff, $padding: 0) {
+  background-color: $bg-color;
+  color: $color;
+  padding: $padding;
+  border: none;
+  cursor: pointer;
+  &:hover{
+    background-color: lighten($bg-color, 10%);
+  }
+  &:active{
+    background-color: darken($bg-color, 10%);
+  }
+
+}
